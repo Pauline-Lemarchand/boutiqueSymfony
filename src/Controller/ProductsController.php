@@ -33,7 +33,7 @@ class ProductsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            dd($request);
+          
             $productsRepository->save($product, true);
 
 
@@ -79,6 +79,13 @@ class ProductsController extends AbstractController
     public function show(Products $product): Response
     {
         return $this->render('products/show.html.twig', [
+            'product' => $product,
+        ]);
+    }
+    #[Route('/details/{id}', name: 'app_products_showprod', methods: ['GET'])]
+    public function showprod(Products $product): Response
+    {
+        return $this->render('products/showprod.html.twig', [
             'product' => $product,
         ]);
     }

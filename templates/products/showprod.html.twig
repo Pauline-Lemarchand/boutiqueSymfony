@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+<div class="fiche_produit">
+<div class="photo_front">
+<img src="{{ asset('uploads/photo/' ~ product.photoProduct ) }}" class="photo_produit" alt="collier">
+</div>
+<div class="product_front">
+    <h1>{{ product.nameProduct }}</h1>
+    <div class="caracteristique">
+    <div class="prix_pdt">
+ <p>Prix : {{ product.priceProduct }}€</p>
+
+</div>
+<div class="description_pdt">
+<h2>Description du produit : </h2>
+{{ product.descriptionProduct }}
+</div>
+<a class="btn_panier"href="btn_panier">Ajouter au panier</a>
+
+    </div>
+
+    </div>
+    </div>
+    <div class="container"> 
+    <div id="demo" > 
+    <div class="card"> 
+    
+    <div class="row"> <div class="col-md-6 text-center align-self-center"> 
+    <img class="img-fluid" src="{{ asset('uploads/photo/' ~ product.photoProduct ) }}"> </div> 
+    <div class="col-md-6 info"> <div class="row title"> <div class="col">
+    <h2>{{ product.nameProduct }}</h2></div> <div class="col text-right"><a href="#">
+    <i class="fa fa-heart-o"></i></a></div> </div> <p>{{ product.descriptionProduct }}</p> 
+   
+    <div class="row price"><big><b> {{ product.priceProduct }}€</b></big></div>
+    <div class="row lower"> <div class="col"> 
+    <a class="carousel-control-prev" href="#demo" data-slide="prev"><i class="fa fa-arrow-left"></i></a> 
+    <a class="carousel-control-next" href="#demo" data-slide="next"><i class="fa fa-arrow-right"></i></a> 
+    </div> <div class="col text-right align-self-center"> <button class="btn">Add to cart</button> </div> 
+    </div> </div> </div> 
+    </div> </div> </div>
+{% endblock %}

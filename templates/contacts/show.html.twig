@@ -7,32 +7,30 @@
 
     <table class="table">
         <tbody>
+            
             <tr>
-                <th>Id</th>
-                <td>{{ contact.id }}</td>
-            </tr>
-            <tr>
-                <th>LastnameContact</th>
+                <th>Nom </th>
                 <td>{{ contact.lastnameContact }}</td>
             </tr>
             <tr>
-                <th>FirstnameContact</th>
+                <th>Prénom</th>
                 <td>{{ contact.firstnameContact }}</td>
             </tr>
             <tr>
-                <th>MessageContact</th>
+                <th>Message</th>
                 <td>{{ contact.messageContact }}</td>
             </tr>
             <tr>
-                <th>EmailContact</th>
+                <th>Email</th>
                 <td>{{ contact.emailContact }}</td>
             </tr>
         </tbody>
     </table>
+<div class="btn_back">
+    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_contacts_index') }}">Retour</a>
 
-    <a href="{{ path('app_contacts_index') }}">back to list</a>
-
-    <a href="{{ path('app_contacts_edit', {'id': contact.id}) }}">edit</a>
+    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_contacts_edit', {'id': contact.id}) }}">Modifier</a>
 
     {{ include('contacts/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

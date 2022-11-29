@@ -3,14 +3,11 @@
 {% block title %}Users{% endblock %}
 
 {% block body %}
-    <h1>Users</h1>
+    <h1>Utilisateur</h1>
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
+           
             <tr>
                 <th>Email</th>
                 <td>{{ user.email }}</td>
@@ -25,10 +22,11 @@
             </tr>
         </tbody>
     </table>
+<div class="btn_back"> 
+    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_users_index') }}">Retour</a>
 
-    <a href="{{ path('app_users_index') }}">back to list</a>
-
-    <a href="{{ path('app_users_edit', {'id': user.id}) }}">edit</a>
+    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_users_edit', {'id': user.id}) }}">Modifier</a>
 
     {{ include('users/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

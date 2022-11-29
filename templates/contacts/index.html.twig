@@ -26,8 +26,8 @@
                 <td>{{ contact.messageContact }}</td>
                 <td>{{ contact.emailContact }}</td>
                 <td>
-                    <a href="{{ path('app_contacts_show', {'id': contact.id}) }}">show</a>
-                    <a href="{{ path('app_contacts_edit', {'id': contact.id}) }}">edit</a>
+                    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_contacts_show', {'id': contact.id}) }}">Afficher</a>
+                    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_contacts_edit', {'id': contact.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}

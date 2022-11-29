@@ -8,11 +8,12 @@
 
 <h3>{{ category.nameCategory }}</h3>
    
+<div class="btn_back">
+    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_categories_index') }}">Retour</a>
 
-    <a class="btn btn-lg btn-primary btn_co" href="{{ path('app_categories_index') }}">Revenir à la liste</a>
-
-    <a class="btn btn-lg btn-primary btn_co" href="{{ path('app_categories_edit', {'id': category.id}) }}">Modifier</a>
+    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_categories_edit', {'id': category.id}) }}">Modifier</a>
 
     {{ include('categories/_delete_form.html.twig') }}
+    </div>
     </div>
 {% endblock %}

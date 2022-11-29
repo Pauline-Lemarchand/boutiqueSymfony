@@ -3,5 +3,79 @@
 {% block title %}Palomei Bijoux{% endblock %}
 
 {% block body %}
-<h1>Bienvenue dans l'admnistrateur de votre site </h1>
+
+
+ <div class="product_back">
+    <h1>Bienvenue dans l'admnistrateur de votre site </h1>
+    <div class="product_back">
+    <h2>Vos formulaires reçus</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Message</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+              
+                <td>{{ contact.lastnameContact }}</td>
+                <td>{{ contact.firstnameContact }}</td>
+                <td>{{ contact.messageContact }}</td>
+                <td>{{ contact.emailContact }}</td>
+                <td>
+                    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_contacts_show', {'id': contact.id}) }}">Afficher</a>
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <table class="table">
+    <h2>Vos produits</h2>
+        <thead>
+            <tr>
+              
+                <th>Nom du produit</th>
+                <th>Description</th>
+                <th>Catégorie</th>
+                <th>Prix</th>
+                <th>Photo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+       
+       
+            <tr>
+            
+                <td>{{ product.nameProduct }}</td>
+                <td>{{ product.descriptionProduct }}</td>
+                <td>{{ product.category.nameCategory }}</td>
+               
+                <td>{{ product.priceProduct }} €</td>
+                <td><img src="{{ asset('uploads/photo/' ~ product.photoProduct ) }}" class="photoback" alt="collier"></td>
+                <td>
+                    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_products_show', {'id': product.id}) }}">Afficher</a>
+                   
+                </td>
+            </tr>
+      {% endfor %}
+     
+        </tbody>
+    </table>
+
+   
 {% endblock %}

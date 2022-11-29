@@ -33,5 +33,28 @@
 
 </div>
 </div>
+<h2 class="title_collection">Tous nos bijoux</h2>
+<div class="collection">
 
+
+
+{% for product in products %}
+<div class="card" style="width: 18rem;">
+  <img src="{{ asset('uploads/photo/' ~ product.photoProduct) }}" class="card-img-top" alt="...">
+
+  
+               <h2 class="title_produit">{{ product.nameProduct }}</h2>
+               <p class="title_produit">{{product.priceProduct}} €</p>
+                
+
+  <div class="card-body">
+
+    <a  href="{{ path('app_products_showprod',{'id':product.id}) }}" class="btn btn-primary">Acheter</a>
+  </div>
+ 
+</div>
+
+
+ {% endfor %}
+</div>
 {% endblock %}
