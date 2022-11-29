@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+
+    <h1 class="title_category">Nos {{ category.nameCategory }}</h1>
+<div class="block_produit">
+ {% for product in category.product %}
+<div class="card" style="width: 18rem;">
+  <img src="{{ asset('uploads/photo/' ~ product.photoProduct) }}" class="card-img-top" alt="...">
+
+  
+               <h2 class="title_produit">{{ product.nameProduct }}</h2>
+               <p class="title_produit">{{product.priceProduct}} €</p>
+                {% endfor %}
+
+  <div class="card-body">
+
+    <a  href="#" class="btn btn-primary">Acheter</a>
+  </div>
+</div>
+ </div>
+
+{% endblock %}

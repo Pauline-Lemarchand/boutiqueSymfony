@@ -1,0 +1,22 @@
+
+
+{{ form_start(form, {'attr': {'class': 'formulaire'}}) }}
+  
+ <div class="block_contact">
+ {{ form_label(form.lastnameContact) }}
+  {{ form_widget(form.lastnameContact,{'attr': {'class': 'input'}}) }}
+
+ {{ form_label(form.firstnameContact) }}
+  {{ form_widget(form.firstnameContact,{'attr': {'class': 'input'}}) }}
+
+ {{ form_label(form.messageContact) }}
+  {{ form_widget(form.messageContact,{'attr': {'class': 'input'}}) }}
+
+ {{ form_label(form.emailContact) }}
+  {{ form_widget(form.emailContact,{'attr': {'class': 'input'}}) }}
+</div>
+ 
+    <button class="btn btn_contact">{{ button_label|default('Envoyer') }}</button>
+  
+{{ form_end(form) }}
+ 

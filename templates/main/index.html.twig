@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Palomei Bijoux{% endblock %}
+
+{% block body %}
+
+<div class="block_header">
+<div class="back_header">
+    <h1>Palomei Bijoux</h1>
+    <p>Vente de bijoux</p>
+    </div>
+</div>
+
+<div class="block_produit">
+<div class="card card_collier" style="width: 18rem;">
+
+    <a href="{{ path('app_categories_show',{'id':1}) }}" class="btn_categories" >Nos colliers </a>
+
+</div>
+<div class="card card_bracelets" style="width: 18rem;">
+
+    <a href="{{ path('app_categories_show',{'id':3}) }}" class="btn_categories" >Nos bracelets </a>
+
+</div>
+<div class="card card_bagues" style="width: 18rem;">
+ 
+    <a href="{{ path('app_categories_show',{'id':2}) }}" class="btn_categories" >Nos bagues</a>
+
+</div>
+<div class="card card_boucles" style="width: 18rem;">
+  
+    <a href="{{ path('app_categories_show',{'id':4}) }}" class="btn_categories" >Nos boucles d'oreilles</a>
+
+</div>
+</div>
+
+{% endblock %}

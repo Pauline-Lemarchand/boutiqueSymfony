@@ -1,0 +1,45 @@
+
+
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Products index{% endblock %}
+
+{% block body %}
+<div class="product_back">
+    <h1>Produits</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+              
+                <th>Nom du produit</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Photo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+            
+                <td>{{ product.nameProduct }}</td>
+                <td>{{ product.descriptionProduct }}</td>
+                <td>{{ product.priceProduct }} €</td>
+                <td><img src="{{ asset('uploads/photo/' ~ product.photoProduct ) }}" class="photoback" alt="collier"></td>
+                <td>
+                    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_products_show', {'id': product.id}) }}">Afficher</a>
+                    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_products_edit', {'id': product.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-lg btn-primary btn_co" href="{{ path('app_products_new') }}">Créer un nouveau produit</a>
+   </div>
+{% endblock %}

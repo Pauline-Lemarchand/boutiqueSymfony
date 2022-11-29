@@ -1,0 +1,41 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title %}Users index{% endblock %}
+
+{% block body %}
+<div class="product_back">
+    <h1>Utilisateurs</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>Email</th>
+                <th>Roles</th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+               
+                <td>
+                    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_users_show', {'id': user.id}) }}">Afficher</a>
+                    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_users_edit', {'id': user.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-lg btn-primary btn_co" href="{{ path('app_users_new') }}">Créér un nouveau utilisateur</a>
+    </div>
+{% endblock %}

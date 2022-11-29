@@ -1,0 +1,22 @@
+
+    {{ form_start(form, {'attr': {'class': 'formulaire'}}) }}
+  
+ <div class="block_contact">
+ {{ form_label(form.nameProduct) }}
+  {{ form_widget(form.nameProduct,{'attr': {'class': 'input'}}) }}
+
+ {{ form_label(form.descriptionProduct) }}
+  {{ form_widget(form.descriptionProduct,{'attr': {'class': 'input'}}) }}
+
+ {{ form_label(form.priceProduct) }}
+  {{ form_widget(form.priceProduct,{'attr': {'class': 'input'}}) }}
+
+ {{ form_label(form.category) }}
+  {{ form_widget(form.category,{'attr': {'class': 'input'}}) }}
+
+  {{ form_label(form.photoProduct) }}
+  {{ form_widget(form.photoProduct,{'attr': {'class': 'input'}}) }}
+</div>
+    {# <button class="btn btn-lg btn-primary btn_co" class="btn">{{ button_label|default('Save') }}</button> #}
+       <button class="btn btn_contact">{{ button_label|default('Envoyer') }}</button>
+{{ form_end(form) }}

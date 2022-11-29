@@ -1,0 +1,38 @@
+{% extends 'baseadmin.html.twig' %}
+{% block title %}Categories index{% endblock %}
+
+{% block body %}
+<div class="product_back">
+    <h1>Catégories</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+               
+                <th>Nom de la catégorie</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                
+                <td>{{ category.nameCategory }}</td>
+                <td>
+                    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_categories_showadmin', {'id': category.id}) }}">Afficher</a>
+                    <a class="btn btn-lg btn-primary btn_co prod" href="{{ path('app_categories_edit', {'id': category.id}) }}">Modifier</a>
+                   
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-lg btn-primary btn_co" href="{{ path('app_categories_new') }}">Ajouter une catégorie</a>
+</div>
+  
+{% endblock %}
